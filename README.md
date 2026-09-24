@@ -1,4 +1,4 @@
-# VINCE ARNEL S. mina  
+# Mina, Luigi Caezar F.  
 ## INF 233 MWA
 ## CTADMOBL Advance Mobile Programming
 
