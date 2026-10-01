@@ -45,3 +45,7 @@ app.*.map.json
 /android/app/release
 
 mina_advmobprog/build/
+mina_mobile/build/
+mina_mobile/android/app/debug/
+mina_mobile/android/app/profile/
+mina_mobile/android/app/release/
