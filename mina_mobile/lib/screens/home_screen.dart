@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'product_screen.dart';
 import 'cart_screen.dart';
 import 'profile_screen.dart';
+import 'chat_list_screen.dart';
 
 import '../constants.dart';
 import '../services/user_service.dart';
@@ -36,6 +37,12 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _profileName = user.firstName;
     });
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 
   @override
@@ -102,11 +109,11 @@ class _HomeScreenState extends State<HomeScreen> {
             : FloatingActionButton(
                 backgroundColor: Colors.deepPurple.shade50,
                 foregroundColor: Colors.deepPurple.shade700,
-                onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Chat coming soon')),
-                  );
-                },
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (_) => const ChatListScreen(),
+                  ),
+                ),
                 child: const Icon(Icons.chat),
               ),
       ),

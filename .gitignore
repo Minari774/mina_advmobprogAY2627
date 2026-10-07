@@ -49,3 +49,10 @@ mina_mobile/build/
 mina_mobile/android/app/debug/
 mina_mobile/android/app/profile/
 mina_mobile/android/app/release/
+
+# Flutter-generated iOS configuration
+mina_mobile/ios/Flutter/Generated.xcconfig
+mina_mobile/ios/Flutter/ephemeral/
+mina_mobile/ios/Flutter/flutter_export_environment.sh
+mina_mobile/ios/Runner/GeneratedPluginRegistrant.*
+
