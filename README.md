@@ -26,3 +26,8 @@ ProductService handles the API requests, while Product converts JSON data into D
 
 The User represents the model, UserService is the sole class that interacts with the API/SharedPreferences for authentication data, and ProfileScreen simply requests UserService().getUser() for the logged-in user and shows it — following the same Repository/Service structure as Labs 2-3, now utilized for /auth/login. The revised pattern includes a persistence layer: UserService stores the login response in SharedPreferences and retrieves it later, allowing the service to function as a local cache in front of the API rather than contacting it on every screen. The saved user id is now what scopes the cart: CartScreen no longer directly calls CartService.getCartsByUser with a hardcoded demo id as it did in Lab 3 — it first retrieves UserService().getUser().id and then sends that actual id into getCartsByUser, ensuring the displayed cart always belongs to the signed-in user.
 
+
+## Lab Activity 5: Discussion
+
+The sign-in screen accepts an email or username without requiring the user to select an authentication provider. Firebase Authentication handles email accounts, while DummyJSON handles username accounts. The profile screen allows users to update their username, and logout requires confirmation before clearing the session. Keeping authentication logic in UserService and account details in the profile screen makes the account flow easier to maintain.
+
